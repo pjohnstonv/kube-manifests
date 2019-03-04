@@ -1,2 +1,2 @@
 # kube-manifests
-kubernetes manifests
+kubernetes manifests used at http://www.pxedeploy.com

@@ -1,0 +1,37 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+# services "prometheus" was not valid:
+# * spec.ports[0].nodePort: Forbidden: may not be used when `type` is 'ClusterIP'
+#
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-03-03T07:00:19Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubernetes.io/cluster-service: "true"
+    kubernetes.io/name: Prometheus
+  name: prometheus
+  namespace: kube-system
+  resourceVersion: "15447"
+  selfLink: /api/v1/namespaces/kube-system/services/prometheus
+  uid: 01986003-3d82-11e9-b38d-0673aabc77ee
+spec:
+  clusterIP: 100.69.178.109
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    nodePort: 30231
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    k8s-app: prometheus
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a019860033d8211e9b38d0673aabc77e-1256983090.us-west-2.elb.amazonaws.com
